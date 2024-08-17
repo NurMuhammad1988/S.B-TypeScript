@@ -85,7 +85,16 @@
 // }
 // const numbers: number[] = [1, 2, 3, 4, 5];
 // numbers.map((num: number) => num.toFixed());//bu numbersda number number malumot turi array ichida qattiy aytib qo'yilgani sababli numbersni chaqirganda hamma array metodlariham keladi va mapham array metodi hissoblanadi va bu holatda map parametrida num nomli parametr ochib bu numni number malumot turi ekanligi aytilib arrow funksiya chaqirilib numga srazi to fixed metodi chaqirildi
+// const logCar = (car: { name: string; year: number }) => {
+//     //bu arrow function ichida yozilgan tozza object  constructor funksiyaga rossa o'hsharkan
+//     return `Name of car - ${car.name}, created at - ${car.year}`;
+// };
+// console.log(logCar({ name: "BMW", year: 2001 }));
+// const logCar = (car: { name: string; year: number }) => {//yani
+//     return `Name of car - ${car.name}, created at - ${car.year}`;
+// };
+// console.log(logCar({ name: "BMW" }));//bu holat hato hissoblanadi yani year kemadi (agar yearni malumoti serverdan keletgan bo'lsa va serverda yearni malumotlari bilan muammo sodir bo'lsa) browserda year undefined bo'lib turadi lekin tsda bu hato hissoblanadi chunki object yozilgandan keyin chaqirilishi shart yani required yani chaqirilishgi majbur shu majburiyni unrequired yani majburiymas qilish kerak
 var logCar = function (car) {
     return "Name of car - ".concat(car.name, ", created at - ").concat(car.year);
 };
-console.log(logCar({ name: "BMW", year: 2001 }));
+console.log(logCar({ name: "BMW" })); //bu holat hato hissoblanadi yani year kemadi (agar yearni malumoti serverdan keletgan bo'lsa va serverda yearni malumotlari bilan muammo sodir bo'lsa) browserda year undefined bo'lib turadi lekin tsda bu hato hissoblanadi chunki object yozilgandan keyin chaqirilishi shart yani required yani chaqirilishgi majbur shu majburiyni unrequired yani majburiymas qilish kerak bu uchun yeardan keyin ? so;rov qo;yildi yani year? agar serverdan yearni number malumot turoga oid qiymatlari kelsa default holatda ishlayveradi kelmasa bu year ishlamay turadi yani server so'rovlariga oid bu so'roq belgisi ? yani majburymas kesa ishlat kemasa yearni ishlatma
