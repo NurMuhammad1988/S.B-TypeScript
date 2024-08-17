@@ -83,6 +83,49 @@
 //     console.log(a);
 // }
 
-function logger(a: number): number | string {
-    return a;
-} 3chi dars 6 chi minutda qoldi
+// function logger(a: number): number | string {
+//     //yani bu holatda logger nomli funksiya parametrida number a va string buni chaqirish ishlatish uchun bectik ichida chaqiriladi // yani a parametrli number qabul qiladi va string qaytradi
+//     return `${a * 2}`;
+// }
+
+// function logger(a: number): number | string {//yani a parametrli number qabul qiladi va funksiya return qietganda yokida number ytokida string qaytaradi yani bu va>> |
+//     return a;//bu holatda a dan keyin >>. yani nuqta qo'yilsa faqat number malumot turini metodlari chiqepti chunki funksiyada parametrda birinchi a:number yozilgan shu sabab birinchi numberni metodlari chiqadi
+// }
+
+// function logger(a: number | string) {
+//     if (typeof a === "number") {
+//         return a.toFixed();
+//     } else if (typeof a === "string") {
+//         return a.toLowerCase();
+//     }
+// }
+
+// function logger(a: number | string): void {
+//     //agarda parametrdagi malumot turi number yoki string bo'lsa if else yoki switch case bilan number yokistring malumot turini ajratib olib kerakli metodlarniham chaqirib ishlatish mumkun
+//     if (typeof a === "number") {
+//         //yani agarda logger funksiyani a parametri number malumot turiga qattiy teng bo'lsa logda a ni toFixed metodi bilan chaqir//bu toFixwed numberni metodi
+//         console.log(a.toFixed());
+//     } else if (typeof a === "string") {
+//         //yani agarda logger funksiyani a parametri string malumot turiga qattiy teng bo'lsa logda a ni toLowerCase metodi bilan chaqir//bu toLowerCase stringni metodi
+//         console.log(a.toLowerCase());
+//     }
+// }
+
+// const numbers: number[] = [1, 2, 3, 4, 5];
+// numbers.map((num: number) => num.toFixed());//bu numbersda number number malumot turi array ichida qattiy aytib qo'yilgani sababli numbersni chaqirganda hamma array metodlariham keladi va mapham array metodi hissoblanadi va bu holatda map parametrida num nomli parametr ochib bu numni number malumot turi ekanligi aytilib arrow funksiya chaqirilib numga srazi to fixed metodi chaqirildi
+
+// const logCar = (car: { name: string; year: number }) => {//yani
+//     return `Name of car - ${car.name}, created at - ${car.year}`;
+// };
+// console.log(logCar({ name: "BMW", year: 2001 }));
+
+// const logCar = (car: { name: string; year: number }) => {//yani
+//     return `Name of car - ${car.name}, created at - ${car.year}`;
+// };
+// console.log(logCar({ name: "BMW" }));//bu holat hato hissoblanadi yani year kemadi (agar yearni malumoti serverdan keletgan bo'lsa va serverda yearni malumotlari bilan muammo sodir bo'lsa) browserda year undefined bo'lib turadi lekin tsda bu hato hissoblanadi chunki object yozilgandan keyin chaqirilishi shart yani required yani chaqirilishgi majbur shu majburiyni unrequired yani majburiymas qilish kerak
+
+
+const logCar = (car: { name: string; year?: number }) => {//yani
+    return `Name of car - ${car.name}, created at - ${car.year}`;
+};
+console.log(logCar({ name: "BMW" }));//bu holat hato hissoblanadi yani year kemadi (agar yearni malumoti serverdan keletgan bo'lsa va serverda yearni malumotlari bilan muammo sodir bo'lsa) browserda year undefined bo'lib turadi lekin tsda bu hato hissoblanadi chunki object yozilgandan keyin chaqirilishi shart yani required yani chaqirilishgi majbur shu majburiyni unrequired yani majburiymas qilish kerak bu uchun yeardan keyin ? so;rov qo;yildi yani year? agar serverdan yearni number malumot turoga oid qiymatlari kelsa default holatda ishlayveradi kelmasa bu year ishlamay turadi yani server so'rovlariga oid bu so'roq belgisi ? yani majburymas kesa ishlat kemasa yearni ishlatma

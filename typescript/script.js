@@ -48,10 +48,44 @@
 // function logger(a: number): string {//bu holati hato hissoblanadi chunki bu holatda parametrdagi(a: number) number hissoblanadi yani a number bo'lib turib funksiyaga string qaytar deyish hato hissoblanadi
 //     return a * 2;
 // }
-function logger(a) {
-    return "".concat(a * 2);
-}
+// function logger(a: number): string {
+//     //bu holat esa hatomas chunki funksiyani a parametri number va funksiyaga umumiy qilib string qaytar deyildi va bectik ichiga ani yani numberni ko'paytir 2 ga deyildi //endi bu funksya a parametrli numberni qabul qiladi va string qilib qaytaradi
+//     return `${a * 2}`;
+// }
 // function logger(a: number): number {
 //     //bu holatda hammasi number// (function logger(a: number): number) yani bu funksiya va nomi logger va bu number malumot turiga ega (a)ni qabul qiladi va bu funksiya number malumnot turini qaytarishi shart agar boshqa narsa qaytarsa bu hato chiqaradi
 //     return a * 2;
 // }
+// function logger(a: number): void {//tsda funksiyada voidni chaqirish bu funksiya return qilinmasin degani agar return qilinsa hato chiqadi yani bu funksiya faqat dastur uchun yoziladi hech narsani qaytarmeydi buni ko'rish uchun faqat logga chaqirish mumkun yoki shunchaki ishlatib qo'yish mumkun nlekin browserga chaqirib bo'meydi
+//     console.log(a);
+// }
+// function logger(a: number): number | string {
+//     //yani bu holatda logger nomli funksiya parametrida number a va string buni chaqirish ishlatish uchun bectik ichida chaqiriladi // yani a parametrli number qabul qiladi va string qaytradi
+//     return `${a * 2}`;
+// }
+// function logger(a: number): number | string {//yani a parametrli number qabul qiladi va funksiya return qietganda yokida number ytokida string qaytaradi yani bu va>> |
+//     return a;//bu holatda a dan keyin >>. yani nuqta qo'yilsa faqat number malumot turini metodlari chiqepti chunki funksiyada parametrda birinchi a:number yozilgan shu sabab birinchi numberni metodlari chiqadi
+// }
+// function logger(a: number | string) {
+//     if (typeof a === "number") {
+//         return a.toFixed();
+//     } else if (typeof a === "string") {
+//         return a.toLowerCase();
+//     }
+// }
+// function logger(a: number | string): void {
+//     //agarda parametrdagi malumot turi number yoki string bo'lsa if else yoki switch case bilan number yokistring malumot turini ajratib olib kerakli metodlarniham chaqirib ishlatish mumkun
+//     if (typeof a === "number") {
+//         //yani agarda logger funksiyani a parametri number malumot turiga qattiy teng bo'lsa logda a ni toFixed metodi bilan chaqir//bu toFixwed numberni metodi
+//         console.log(a.toFixed());
+//     } else if (typeof a === "string") {
+//         //yani agarda logger funksiyani a parametri string malumot turiga qattiy teng bo'lsa logda a ni toLowerCase metodi bilan chaqir//bu toLowerCase stringni metodi
+//         console.log(a.toLowerCase());
+//     }
+// }
+// const numbers: number[] = [1, 2, 3, 4, 5];
+// numbers.map((num: number) => num.toFixed());//bu numbersda number number malumot turi array ichida qattiy aytib qo'yilgani sababli numbersni chaqirganda hamma array metodlariham keladi va mapham array metodi hissoblanadi va bu holatda map parametrida num nomli parametr ochib bu numni number malumot turi ekanligi aytilib arrow funksiya chaqirilib numga srazi to fixed metodi chaqirildi
+var logCar = function (car) {
+    return "Name of car - ".concat(car.name, ", created at - ").concat(car.year);
+};
+console.log(logCar({ name: "BMW", year: 2001 }));
