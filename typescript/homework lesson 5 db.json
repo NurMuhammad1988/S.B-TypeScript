@@ -1,0 +1,14 @@
+{
+    "name": "BMW",
+    "color": "black",
+    "isBallon": false,
+    "speead": {
+        "max": 330,
+        "min": 100
+    },
+    "price": {
+        "total": "20.000",
+        "credit": "Per mont 100$",
+        "discount": 10
+    }
+}
