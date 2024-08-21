@@ -480,10 +480,26 @@
 // const car = {
 //     name: "Bmw",
 //     color: "Red",
-    
+
 // };
 // const myCar = loggerTime<ICar>(car);//bu holatda hato chunki carda endi onSpeed funksiyasiham bor va bu funksiya chaqirilmadi shu sabab hato
 
-// tsc script.ts
+// class Car<T> {//class va Generics ////bu holatda constructor bo'ladi
+//     data: T;
+// }
+// const a = new Car<number>()
+// a.data
 
-// 7 chi dars 1:21 daqiqada qoldi
+// interface ICar {
+//     name: string;
+// }
+// function logger<T extends ICar>(data: T): T {
+//     return data;
+//     // return data.name
+// }
+// logger<string>();//hozircha bu hato chunki funksiya chaqirilganda parametr berilishi kerak shunda hato ketadi
+
+
+
+
+// tsc script.ts
