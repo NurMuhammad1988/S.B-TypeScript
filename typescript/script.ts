@@ -261,13 +261,13 @@
 
 // let car: string = "bmw"
 // car = "mers"//let o'zgaruvchi bilan carni qiymatinini o'zgartirish yani endi bu car mers stringga o'zgardi
-// console.log(car);
+// console.log(car);//mers
 
 // let car: "mers" = "bmw"//literal type>>> yani bu hato car: dan keyingi "mers" bu car qattiy tartibda string malumot turiga oid mers textidan iborat bo'lishi kerak bu shart degani yani = dan keyin stringda bmw chaqirilishi hato endi = dan keyin faqat mersni string holatda chaqirish mumkun boshqa hech qanday narsani chaqirish mumkun emas huddi pstdagiday
 // let car: "mers" = "mers"
 // car = "mers"
 
-// type actionType = "show" | "hide";//literal type yani bu holatda actionType nomli type ochildi va stringda faqat shoq yoki hide bo'lsaginaishlaydigan qilindi va logger funksiyaga action parametr berib actionni actionTypega teng qilib bu bolean malumot turi ekanligi aytilsi va awitch case bilan ichida yoki show yoki hide string malumot turiga qattiy ega bo'lgan actionType bor action parametr chaqirildi va switch caseda agar malumot hide bo'lsa false qil yokida shiw bo'lsa true qil deyildi yani literal typeda shunday malumot turini qiymatiniham berib qo'yish mumkun
+// type actionType = "show" | "hide";//yani show yoki hide string boshqa narsa emas qattiy!!!//literal type yani bu holatda actionType nomli type ochildi va stringda faqat show yoki hide bo'lsagina ishlaydigan qilindi va logger funksiyaga action parametr berib actionni actionTypega teng qilib bu boolean malumot turi ekanligi aytildi va switch case bilan ichida yoki show yoki hide string malumot turiga qattiy ega bo'lgan actionType bor action parametr chaqirildi va switch caseda agar malumot hide bo'lsa false qil yokida show bo'lsa true qil deyildi yani literal typeda shunday malumot turini qiymatiniham berib qo'yish mumkun
 // function logger(action: actionType): boolean {
 //     switch (action) {
 //         case "hide":
@@ -294,7 +294,7 @@
 // enum Dictionary {
 //     Uzb,//0
 //     Rus,//1
-//     Eng,//2 huddi arraydey default holatda shunday arrayday 0 dan boshlanib tartiblanadi yani enum default holatda number malumot turiga kiradi
+//     Eng,//2 huddi arraydey default holatda shunday arrayday 0 dan boshlanib tartiblanadi yani enum default holatda number malumot turiga kiradi enum o'zgarmas hissoblanadi enumlar ikki hil bo'ladi string va number malumot turlariga ega bo'ladi default holatyda number bo'ladi
 // }
 
 // enum Dictionary {//matn yani string malumot turiga aylantirilgan enum
@@ -303,7 +303,12 @@
 //     Eng = "ENG",
 // }
 
-// const runEnum = (): number => {
+// enum Decision {
+//     Yes = 1,
+//     No = "NO",
+// }
+
+// const runEnum = (): number => {//ENUMGA funksiya chaqirilsa bu har doim number malumaot turi bo'lishi kerak masalan return "text" qilib bo'lmaydi
 //     return 2;
 // };
 // enum Decision {
@@ -311,19 +316,148 @@
 //         No = runEnum(),
 // }
 
-enum Dictionary {
-    Uzb,
-    Rus,
-    Eng,
+// enum Dictionary {
+//     Uzb,
+//     Rus,
+//     Eng,
+// }
+// // const uzb = Dictionary.Uzb;
+// // console.log(uzb);
+// const uzbIndex = Dictionary.Uzb;//bu holatda enumni Uzb qiymatini uzbIndex nomli o'zgaruvchiga chaqirib oldik va uzb nomli yangi o'zgaruvchi yaratib Dictionaryni ichidagi uzbindexni chaqirdik shunda uzb qiymati olindi yani enumdan qiymatni olish uchunham alohida o'zgaruvchiga chaqirib olib ishlov berish kerak
+// const uzb = Dictionary[uzbIndex]
+// console.log(uzb);//Uzb qiymatni oladi
+
+// enum Numbers {
+//     One,
+//     Two,
+//     Three,
+// }
+// function getUzbNumber(number: Numbers): string {
+//     switch (number) {
+//         case Numbers.One:
+//             return "Bir";
+//         case Numbers.Two:
+//             return "Ikki";
+//         case Numbers.Three:
+//             return "Uch";
+//     }
+// }
+
+// enum Numbers {
+//     One,
+//     Two,
+//     Three,
+//     Four,
+// }
+// function getUzbNumber(number: Numbers) {
+//     switch (number) {
+//         case Numbers.One:
+//             return "Bir";
+//         case Numbers.Two:
+//             return "Ikki";
+//         case Numbers.Three:
+//             return "Uch";
+//             default:
+//                 const a: never = number//bu holat hato chunki a nomli o'zgaruvchiga yani default holatda a nomli o'zgaruvchiga neverni chaqirib num,berga teng qildik lekin hato ko'rsatdi chunki bu never numberni tekshiradi desaham bo'ladi numberda esa Numbers enum chaqirilgan va unumni Four qiymati switchda chaiqirilgan numberga kirmey qolgan chunki Four keyin yozilgan shu sabab never numberni tekshirganda bitta qiymat yani Four qolib ketganligi uchun hato qaytaradi Four esa undefined (function getUzbNumber(number: Numbers): "Bir" | "Ikki" | "Uch" | undefined >>getUzbNumber funskiya yozib bo'lingandan keyin enumga yozildi ) holatida chunki typescriptni qonuni shu hech narsa qolib ketmasligi kerak qolib ketsaham aytib qo'yilishi kerak bu type scripti maqsadi yani hatolarni boshidan ko'rib ishlash loyihani imkon qadar hatosiz qilish uchun
+//     }
+// }
+
+// enum Numbers {
+//     One,
+//     Two,
+//     Three,
+//     Four,
+// }
+// function getUzbNumber(number: Numbers) {
+//     switch (number) {
+//         case Numbers.One:
+//             return "Bir";
+//         case Numbers.Two:
+//             return "Ikki";
+//         case Numbers.Three:
+//             return "Uch";
+//         case Numbers.Four:
+//             return "To'rt"; //bu holatda endi pastdagi a o'zgaruvchida hato chiqmeydi chunki switchdagi ichida Numbers bor number endi to'liq ishlatildi
+//         default:
+//             const a: never = number;
+//     }
+// }
+
+///////
+
+////Tuples yani array typescripdagi bu arrayni jsdagi array bilan farqi tuplesda qattiy aytib qo'yiladi yani array nimalardan qanday tartibda ekanligi qattiy aytib qo'yiladi va o'zgartirish mumkun emas hato qaytaradi
+
+// const array: [number, number, string] = [1, 2, "a"]
+// const array: [number, number, string] = [1, 2, "a", "ab"]//bu hato chunki arrayga aytildiki san number number va stringdan iboratsand eb qattiy aytildi yani endi string ikkita bo'lishi yoki raqam 3 ta bo'lishi mumkun emas
+// const array: [number, number, string] = [1,"a", 2, ]//buham hato chunki number number string deb arrayga qattiy qilib aytilgan bu holatda esa number string number yani hato yani joylariniham o'zgartirish mumkun emas array o'zgaruvchida qanday tartibda va berilgan qiymatda  berilgan bo'lsa massivniham huddi shu tartibda yozish kerak
+// const array: [number, number, string] = [1,  "a",]//buham hato chumki kamayibham qolishi kerak emas
+
+// const array: [number, number, string] = [1, 2, "a"]
+// array.push(4)
+// array[0]//to'gri
+// array[1]//to'gri
+// array[2]//to'gri chunki arrayda 0 dan 2 gacha yani uchta malumot bor number number va string bularni shunday olish mumkun lekin pastdagi push bilan qo'shilgan 4 chi element hato aslida push bu holatda 4 chi elementni qo'sha olgani yo'q
+// array[3]//bu hato tuplesda arrayga malumotni bu holatda qo'shish mumkun emas yani bu holatda arrayga push qilib 4 chi element qo'shildi lekin ishlamadi sababi tuplesda qattiq qilib bu array o'zgaruvchi nimlardan va qanday tartibda ekanligi qattiy aytilgan
+
+// const array: [number, number, string] = [1, 2, "a"];
+// const [a, b, c] = array;//tuplesda hato yozilmasa jsdagi arrayni hamma metodlarini ishlatsa distruptatsa qilsaham bo'ladi
+
+///////
+
+////Generics type
+
+//Genericlar tyscriptda odatda T qilib yoziladi
+// function loggerTime<T>(number: T): T {
+//     //funksiyada Generic bor parametrdaham Generic bor qaytadigan narsaham Generic
+//     console.log(new Date());
+//     return number;
+// }//bu holatda Generic yani loggerTimedan kyin yozilgan <T> bu generic deyiladi bu genericga yani t ni o'rniga hohalagan narsa yozish mumkun ekan masalan bu holatda generic yozilgan funksiya chaqirilganda qaytadigan t yani genericni o'rniga numberham stringham qayta qayta qo'yilib chaqirildiva t ni o'rniga birinchi holatda <number>(9) qo'yildi bu malumotni yani bu loggertime funksiya nima qaytarishini t ga yozib hohlagan malumot turini yozib chaqirish mumkun
+// loggerTime<number>(9);
+// loggerTime<string>("Nur");
+
+// interface ICar {
+//     name: string;
+//     color: string;
+// }
+// function loggerTime<T>(number: T): T {
+//     console.log(new Date());
+//     return number;
+// }
+// const car = {
+//     name: "Bmw",//interface sabab bu name va color endi faqat string bo'la oladi boshqa malumot turini chaqirish hato hissoblanadi
+//     color: "Red",//interface sabab bu name va color endi faqat string bo'la oladi boshqa malumot turini chaqirish hato hissoblanadi
+// };
+// loggerTime<ICar>(car); // T ni o'rniga yani generic bilan genericni joyiga objectniham chaqirsa bo'larkan shunda bu loggertime funksiya ishga tushganda icar interfacedagi objectniham ishga tushiradi//(iterfacedagi nastroykaga mos qilib car nomli o'zgaruvchi yaratildi va interfaceni ko'rsatmasiga qarab car objectiga qiymatlar berildi)//////////default interface(ICar) bilan car o'zgaruvchi shu joyda birlashdi yani ulandi yani T bo'sh joyday gap ekan bu bo'sh joyga hohalagan malumot turini chaqirib ishlatish mumkun
+
+// interface ICar {
+//     name: string;
+//     color: string;
+// }
+// const car = {
+//     name: "Bmw",
+//     color: "Red",
+// };
+// function loggerTime<T>(string: T): T {
+//     console.log(new Date());
+//     return string;
+// }
+
+// loggerTime<ICar>(car);//default interface(ICar) bilan car o'zgaruvchi shu joyda birlashdi yani ulandi yani T bo'sh joyday gap ekan bu bo'sh joyga hohalagan malumot turini chaqirib ishlatish mumkun
+
+interface ICar {
+    name: string;
+    color: string;
 }
-// const uzb = Dictionary.Uzb;
-// console.log(uzb);
-const uzbIndex = Dictionary.Uzb;//bu holatda enumni Uzb qiymatini uzbIndex nomli o'zgaruvchiga chaqirib oldiok va uzb nomli yangi o'zgaruvchi yaratib Dictionaryni ichidagi uzbindexni chaqirdik shunda uzb qiymati olindi yani enumdan qiymatni olish uchunham alohida o;zgaruvchiga chaqirib olib ishlov berish kerak ekan
-const uzb = Dictionary[uzbIndex]
-console.log(uzb);//Uzb qiymatni oladi
-
-
-
-
+function loggerTime<T>(number: T): T {
+    console.log(new Date());
+    return number;
+}
+const car = {
+    name: "Bmw",
+    color: "Red",
+};
+const myCar = loggerTime<ICar>(car); //bu holatda loggertime funksiyani myCar nomli o'zgaruvchi ichida chaqirib qiymatlarini chaqirdik loggertimeni qiymatlarida esa icarda default qilib qo'yilgan va carda yozilgan name va color string holatd aturipti
+myCar.name;
+myCar.color;
 
 // tsc script.ts
