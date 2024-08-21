@@ -444,20 +444,46 @@
 
 // loggerTime<ICar>(car);//default interface(ICar) bilan car o'zgaruvchi shu joyda birlashdi yani ulandi yani T bo'sh joyday gap ekan bu bo'sh joyga hohalagan malumot turini chaqirib ishlatish mumkun
 
-interface ICar {
-    name: string;
-    color: string;
-}
-function loggerTime<T>(number: T): T {
-    console.log(new Date());
-    return number;
-}
-const car = {
-    name: "Bmw",
-    color: "Red",
-};
-const myCar = loggerTime<ICar>(car); //bu holatda loggertime funksiyani myCar nomli o'zgaruvchi ichida chaqirib qiymatlarini chaqirdik loggertimeni qiymatlarida esa icarda default qilib qo'yilgan va carda yozilgan name va color string holatd aturipti
-myCar.name;
-myCar.color;
+// interface ICar {
+//     name: string;
+//     color: string;
+// }
+// function loggerTime<T>(number: T): T {
+//     console.log(new Date());//bu holatda shunchaki yozilgan FUNKSIYA BO'SH TURMASLIGI UCHUN consoleda hozirgi vaqtni olib beradi
+//     return number;
+// }
+// const car = {
+//     name: "Bmw",
+//     color: "Red",
+// };
+// const myCar = loggerTime<ICar>(car); //bu holatda loggertime funksiyani myCar nomli o'zgaruvchi ichida chaqirib qiymatlarini chaqirdik loggertimeni qiymatlarida esa icarda default qilib qo'yilgan va carda yozilgan name va color string holatda turipti ////GENERICNI T QO'YIB O'ZIMIZ HOHLAGAN MALUMOT TURIGA O'GIRIB OLIB ISHLATISHIMIZ MUMKUN VA O'ZIMIZ HOHALAGAN MALUMOT TURINI T QO'YIB QAYTARIBHAM OLISHIMIZ MUMKUN!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+// myCar.name;
+// myCar.color;
+
+// interface ICar {
+//     name: string;
+//     color: string;
+//     // onSpeed: (data: string) => string; //interface ichida funksiyalarham yozish mumkun onpeed funksiyada malumot turistring va string qaytaradi ohiridagi string qaytarish kerak bo'lgan malumot turi yoziladigan joy bu stringni o'rnida boshqa malumot turiham bo'lishi mumkun>>>onSpeed: (data: number) => number;
+//     // onSpeed: <T> (data: T) => T; //bu holatda esa speed funksiyasini malumot turi bu speed funksiya chaqirilib ishlatilayotganda nima yozilsa o'sha bo'ladi yani T bo'sh malumot turi bu T ga hohalagan malumot turini berib ishlatish mumkun bu T generic deb ataladi
+//     //   onSpeed: <T> (data: T) => T;bu holatni T yani generic berib boshqa boshqa malumotlarniham qaytarish mumkun masalan dataga T berib ohirida number yoki dataga T berib ohirda stringham qaytarish mumkun masalan pastdagiday
+//     // onSpeed: <T, G>  (data: T) => G;//bu holatda birinchi generic parametrni ichidagi malumot turi yani T bo'ladi ikkinchi yani G genberic esa bu speed funksiya nima qaytarilishi malumot turi aytiladigan joy bo'ladi
+//     onSpeed: <T, G, I>  (data: T) => G;//bu holatda 3 ta    T yani generic ishlatildi yani huddiki string number boolean malumot turlarini bitta funksiyada ishlatish uchun shunday yoziladi va odatda shunday
+// }
+// function loggerTime<T>(data: T): T {
+//     if (typeof data === "string") {
+//         data.toLowerCase();
+//     } else if (typeof data === "number") {
+//         data.toFixed();
+//     }
+//     return data;
+// }
+// const car = {
+//     name: "Bmw",
+//     color: "Red",
+    
+// };
+// const myCar = loggerTime<ICar>(car);//bu holatda hato chunki carda endi onSpeed funksiyasiham bor va bu funksiya chaqirilmadi shu sabab hato
 
 // tsc script.ts
+
+// 7 chi dars 1:21 daqiqada qoldi
