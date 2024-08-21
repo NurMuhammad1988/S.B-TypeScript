@@ -277,15 +277,53 @@
 //     }
 // }
 
+// type actionType = "show" | "hide";
+// function logger(action: actionType): 1 | -1{
+//     switch (action) {//bu holatham tepadagi holat bilan salgina farqi bor yani agar 1 qaytsa hide qiladi -1 qaytsa show qiladi bu 1 -1 lar aslida string hissoblanadi
+//         case "hide":
+//             return 1;
+//         case "show":
+//             return -1;
+//     }
+// }
 
-type actionType = "show" | "hide";
-function logger(action: actionType): 1 | -1{
-    switch (action) {//bu holatham tepadagi holat bilan bir hil yani agar 1 qaytsa hide qiladi -1 qaytsa show qiladi
-        case "hide":
-            return 1;
-        case "show":
-            return -1;
-    }
+//////
+
+////ENUM
+
+// enum Dictionary {
+//     Uzb,//0
+//     Rus,//1
+//     Eng,//2 huddi arraydey default holatda shunday arrayday 0 dan boshlanib tartiblanadi yani enum default holatda number malumot turiga kiradi
+// }
+
+// enum Dictionary {//matn yani string malumot turiga aylantirilgan enum
+//     Uzb = "UZB",
+//     Rus = "RUS",
+//     Eng = "ENG",
+// }
+
+// const runEnum = (): number => {
+//     return 2;
+// };
+// enum Decision {
+//         Yes = 1,
+//         No = runEnum(),
+// }
+
+enum Dictionary {
+    Uzb,
+    Rus,
+    Eng,
 }
+// const uzb = Dictionary.Uzb;
+// console.log(uzb);
+const uzbIndex = Dictionary.Uzb;//bu holatda enumni Uzb qiymatini uzbIndex nomli o'zgaruvchiga chaqirib oldiok va uzb nomli yangi o'zgaruvchi yaratib Dictionaryni ichidagi uzbindexni chaqirdik shunda uzb qiymati olindi yani enumdan qiymatni olish uchunham alohida o;zgaruvchiga chaqirib olib ishlov berish kerak ekan
+const uzb = Dictionary[uzbIndex]
+console.log(uzb);//Uzb qiymatni oladi
 
 
+
+
+
+// tsc script.ts

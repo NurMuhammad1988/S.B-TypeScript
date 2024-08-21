@@ -222,6 +222,58 @@
 // ///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 //////
 ////Literal type
-var car = "bmw";
-car = "mers";
-console.log(car);
+// let car: string = "bmw"
+// car = "mers"//let o'zgaruvchi bilan carni qiymatinini o'zgartirish yani endi bu car mers stringga o'zgardi
+// console.log(car);
+// let car: "mers" = "bmw"//literal type>>> yani bu hato car: dan keyingi "mers" bu car qattiy tartibda string malumot turiga oid mers textidan iborat bo'lishi kerak bu shart degani yani = dan keyin stringda bmw chaqirilishi hato endi = dan keyin faqat mersni string holatda chaqirish mumkun boshqa hech qanday narsani chaqirish mumkun emas huddi pstdagiday
+// let car: "mers" = "mers"
+// car = "mers"
+// type actionType = "show" | "hide";//literal type yani bu holatda actionType nomli type ochildi va stringda faqat shoq yoki hide bo'lsaginaishlaydigan qilindi va logger funksiyaga action parametr berib actionni actionTypega teng qilib bu bolean malumot turi ekanligi aytilsi va awitch case bilan ichida yoki show yoki hide string malumot turiga qattiy ega bo'lgan actionType bor action parametr chaqirildi va switch caseda agar malumot hide bo'lsa false qil yokida shiw bo'lsa true qil deyildi yani literal typeda shunday malumot turini qiymatiniham berib qo'yish mumkun
+// function logger(action: actionType): boolean {
+//     switch (action) {
+//         case "hide":
+//             return false;
+//         case "show":
+//             return true;
+//     }
+// }
+// type actionType = "show" | "hide";
+// function logger(action: actionType): 1 | -1{
+//     switch (action) {//bu holatham tepadagi holat bilan salgina farqi bor yani agar 1 qaytsa hide qiladi -1 qaytsa show qiladi bu 1 -1 lar aslida string hissoblanadi
+//         case "hide":
+//             return 1;
+//         case "show":
+//             return -1;
+//     }
+// }
+//////
+////ENUM
+// enum Dictionary {
+//     Uzb,//0
+//     Rus,//1
+//     Eng,//2 huddi arraydey default holatda shunday arrayday 0 dan boshlanib tartiblanadi yani enum default holatda number malumot turiga kiradi
+// }
+// enum Dictionary {//matn yani string malumot turiga aylantirilgan enum
+//     Uzb = "UZB",
+//     Rus = "RUS",
+//     Eng = "ENG",
+// }
+// const runEnum = (): number => {
+//     return 2;
+// };
+// enum Decision {
+//         Yes = 1,
+//         No = runEnum(),
+// }
+var Dictionary;
+(function (Dictionary) {
+    Dictionary[Dictionary["Uzb"] = 0] = "Uzb";
+    Dictionary[Dictionary["Rus"] = 1] = "Rus";
+    Dictionary[Dictionary["Eng"] = 2] = "Eng";
+})(Dictionary || (Dictionary = {}));
+// const uzb = Dictionary.Uzb;
+// console.log(uzb);
+var uzbIndex = Dictionary.Uzb;
+var uzb = Dictionary[uzbIndex];
+console.log(uzb);
+// tsc script.ts
