@@ -1,0 +1,22 @@
+/* styles.module.css bu css file classlarga idga o'hshash nomlarni aftamatik  beradi _todo_149e8_7 va _title_149e8_27 bu toda va title classlarni tsx yoki jsxga clasnamega sobjectga olib chaqirib qo'yilsa bo'ldi tsx yoki jsxga import qilinetganda nom qo'yilishi kerak hohlagan nom
+
+CSS modullari sinf nomlari, animatsiyalar va media so'rovlari sukut bo'yicha lokal ravishda qamrab olingan CSS fayllari. Bular komponentlar ichidagi uslublarni qamrab olish, global ziddiyatlarni oldini olish va faqat ishlatilgan selektorlarni birlashtirish orqali yakuniy natijani optimallashtirish usulini ta'minlaydi .
+
+CSS moduli CSS fayli bo'lib, unda barcha sinf nomlari va animatsiya nomlari sukut bo'yicha lokal ravishda qamrab olinadi . CSS modullari CSS fayllarida uslublar yozish imkonini beradi, lekin ularni qo'shimcha ishlov berish va xavfsizlik uchun JavaScript ob'ektlari sifatida ishlatadi.
+
+*/
+
+.todo {
+    width: 700px;
+    height: auto;
+    padding: 20px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    margin: auto;
+    margin-top: 100px;
+}
+
+.title {
+    text-align: center;
+    color: var(--white);
+}
