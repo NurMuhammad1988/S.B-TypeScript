@@ -14,9 +14,44 @@ CSS moduli CSS fayli bo'lib, unda barcha sinf nomlari va animatsiya nomlari suku
     border-radius: 8px;
     margin: auto;
     margin-top: 100px;
+    background-color: rgba(179, 134, 79, 0.829);
 }
 
 .title {
     text-align: center;
     color: var(--white);
+}
+
+.button {
+    margin-left: auto;
+}
+
+.button {
+    padding: 10px 18px;
+    color: var(--primary);
+    font-size: 20px;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    transition: all 0.5s;
+    margin-top: 20px;
+
+}
+
+.button:hover {
+    background-color: rgb(233, 207, 172);
+    color: rgba(0, 0, 0, 0.383);
+}
+
+.button:active {
+    transform: translateY(-20px);
+}
+
+.input {
+    display: block;
+    width: 100%;
+    padding: 12px 16px;
+    border: none;
+    outline-color: var(--primary);
+    border-radius: 8px;
 }
