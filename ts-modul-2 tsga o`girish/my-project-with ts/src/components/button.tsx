@@ -1,6 +1,6 @@
 import { FC } from "react";
 
-interface Props {
+interface Props {//bu props huddi class componentlardagi propsday yani tsga tegishli interfacega props qilib util papkani ichidagi style.ts fileda yozilgan classlar chaqirilgan yani u stayllar string holatda yani yozilgan shuni aytib qo'yildi propsdan kelganligi sabab interfacega bu props va ichidakelgan style string deb qattiy aytib qo'yildi
     styles?: string
 }
 

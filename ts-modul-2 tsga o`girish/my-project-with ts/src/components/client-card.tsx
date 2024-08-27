@@ -6,7 +6,6 @@ import { styles } from "../util/style";
 interface Props {
     // logo: JSX.Element; //ustoz shundey yozgandi lekinhato chiqdi logo:string; qilingandan keyin hato ketdi
     logo:string
-    // title: string//????????????????
 }
 
 const ClientCard: FC<Props> = ({ logo }) => {

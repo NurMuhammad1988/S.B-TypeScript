@@ -2,7 +2,7 @@ import { layout, styles } from "../util/style";
 import { bill, google, apple } from "../assets";
 import { FC } from "react";
 
-const Billing: FC = (): JSX.Element => {
+const Billing: FC = (): JSX.Element => {//bu holatda bu billing component nima ekanligini tsga aytish kerak tsga bu billing FC yani function component va buni type jsx.element shunda ts biladi va agar jsxda hato hissoblangan biror ish qilinsa hato chiqarib bu react function jsx component san bu ishni borib boshqa joyda qil bu comonent ichida qilma deydi
     return (
         <section id="features" className={layout.sectionReverse}>
             <div className={layout.sectionImageReverse}>

@@ -38,7 +38,6 @@ const Navbar = () => {
                     >
                         {/* {nav.title} */}
                         <a href={`#${nav.id}`}>{nav.title}</a>
-                        {/* raectda id shunday qilib chaqirilar ekan */}
                     </li>
                 ))}
             </ul>

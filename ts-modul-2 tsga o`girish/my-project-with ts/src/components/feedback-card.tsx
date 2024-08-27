@@ -7,7 +7,7 @@ interface Props {
     name: string
     content: string
     
-}
+}//bu holatda content, name, title util papkadan constants.ts filedan props, distruptatsa qilib chaqirilgani uchun bu content, name, titlelarni nima ekanligini tsga aytib qo'yish kerak constants.ts bu propsdan kelgan qiymatlarni typega qarab typelari yozib chiqildi number, string, string, string
 
 
 const FeedbackCard: FC<Props> = ({ content, name, title }) => {
